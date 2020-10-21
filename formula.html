@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+<head>
+<style>
+  input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: rgb(76, 147, 175);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #4565a0;
+}
+
+.container {
+  border-radius: 5px;
+  background-image: url('images.jpg'); 
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+    <meta charset="utf-8">
+    <body style="background-color:rgb(21, 29, 41);">
+      </body>
+    <font color="#f2f2f2" size="4">
+<h2>Evaluación de malestar cardiaco</h2>
+<p>Por favor, llene los campos que se solicitan y a la brevedad se evaluará su condición y le enviaremos los resultados</p>
+</font>
+<div class="container">
+  <form action="/action_page.php">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Nombre(s)</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Ej. Kyle">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Apellidos</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Ej. Broflowsky">
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">País</label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="mex">México</option>
+        <option value="colombia">Colombia</option>
+        <option value="venezuela">Venezuela</option>
+        <option value="chile">Chile</option>
+        <option value="paraguay">Paraguay</option>
+        <option value="uruguay">Uruguay</option>
+        <option value="españa">España</option>
+        <option value="nicaragua">Nicaragua</option>
+      </select>
+    </div>
+  </div>
+  <form>
+      <label for="correo" required>Correo electrónico</label>
+      <input type="email" id="correo">
+      <label for="num" required>Número de contacto</label>
+      <input type="number" id="num">
+      <label for="edad" required>Edad</label>
+      <input type="number" id="edad">
+    </form>
+  
+  <p>
+      Género:
+      <select name="genero">
+        <option>Masculino</option>
+        <option>Femenino</option>
+        <option>Otro</option>
+      </select>
+    </p>
+  <p>
+    ¿Tienes alguna adicción?:<br>
+    <input type="radio" name="adic" value="1">    Una adicción<br>
+    <input type="radio" name="adic" value="1mas">  Más de una<br>
+    <input type="radio" name="adic" value="2mas">  Más de dos<br>
+    <input type="radio" name="adic" value="0">   Ninguna<br>
+  </p>
+  <p>
+    ¿Haces ejercicio de forma regular?:<br>
+    <input type="radio" name="ejercicio" value="2-3">    Sí, mínimo dos o tres veces por semana<br>
+    <input type="radio" name="ejercicio" value="1-7">  Sí, mínimo una vez por semana<br>
+    <input type="radio" name="ejercicio" value="1-mes">  Sí, mínimo una vez al mes<br>
+    <input type="radio" name="ejercicio" value="no">    No, no practico ningún deporte<br>
+  </p>
+  <p>
+    ¿Existen casos de infarto y/o ictus en tu entorno familiar más cercano (padre, madre, hijos o hermanos)?:<br>
+    <input type="radio" name="infarto" value="no">  No<br>
+    <input type="radio" name="infarto" value="70"> Sí, antes de los 70 años<br>
+    <input type="radio" name="infarto" value="55">  Sí, antes de los 55 años<br>
+    <input type="radio" name="infarto" value="40">   Sí, antes de los 40 años<br>
+  </p>
+  <p>
+    ¿Te consideras una persona estresada a nivel personal o laboral?:<br>
+    <input type="radio" name="estres">   Vivo tranquila y sin estrés<br>
+    <input type="radio" name="estres">  De vez en cuando estoy sometida a presiones<br>
+    <input type="radio" name="estres">  Con frecuencia me siento estresada<br>
+    <input type="radio" name="estres">    Vivo estresada continuamente<br>
+  </p>
+  <p>
+      Usted diría que... <br>
+      <select multiple name="categorias[]">
+        <option value="arte">Necesito un prediagnóstico urgente</option>
+        <option value="tv">Necesito un prediagnóstico con moderada rapidez</option>
+        <option value="ninos">Necesito un prediagnóstico</option>
+        <option value="hazlotu">Puedo esperar</option>
+      </select>
+    </p>
+    <p>
+        Seleccione su padecer... <br>
+        (Oprima control para seleccionar más de una opción) <br>
+        <select multiple name="categorias[]">
+          <option>Siento ocasionalmente dolor en el pecho</option>
+          <option>A veces siento que me falta el aire</option>
+          <option>Cuando me esfuerzo, siento una especie de arritmia</option>
+          <option value="padecer">Tengo la sensación que mi corazón podría estar fallando</option>
+          <option>Tengo sensación de desmayo recurrentemente</option>
+          <option>Constantemente siento dolor en el pecho</option>
+          <option>Al ejercitarme aparece un fuerte dolor en el pecho</option>
+          <option>En ocasiones mi corazón se acelera sin razón aparente</option>
+          <option>Percibo latidos irregulares</option>
+          <option>Creo que he sufrido un mini-infarto</option>
+        </select>
+      </p>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Detallada descripción del malestar</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Mi primer sintoma fue cuando, mis hábitos durante ese tiempo fueron..." style="height:200px" required></textarea>
+    </div>
+  </div>
+  <div class="row">
+  </div>
+  </form>
+</div>
+<form action="../../form-result.php" target="_blank">
+
+  
+  <input type="reset" value="Comenzar de nuevo">
+  <p><input type="submit" value="Enviar información"></p>
+
+</form>
+</body>
+</html>
